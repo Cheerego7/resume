@@ -1,0 +1,36 @@
+version: '2.1'
+services:
+  php7.ftqq.com:
+    image: ccr.ccs.tencentyun.com/ftqq/php7.ftqq.com
+    ports:
+      - "80:80"
+      - "443:80"
+    volumes:
+      - "./data/web:/data"
+  mysql.ftqq.com:
+      #image: yobasystems/alpine-mariadb
+      image: ccr.ccs.tencentyun.com/ftqq/mysql-alpine
+      # build: ./buildMysql
+      environment:
+        MYSQL_ROOT_PASSWORD: itworks1343
+        MYSQL_DATABASE: fangtangdb
+        MYSQL_USER: php
+        MYSQL_PASSWORD: fangtang
+      ports:
+        - "3306:3306"
+      volumes:
+        - ./data/mysql:/var/lib/mysql
+      restart: always
+  redis.ftqq.com:
+      image: ccr.ccs.tencentyun.com/ftqq/redis
+      expose:
+        - "6379"
+      restart: always
+  livereload:
+    image: ccr.ccs.tencentyun.com/ftqq/livereload
+    ports:
+      - "35729:35729"
+    volumes:
+      - "./data:/usr/src/livereload-watch"       
+
+    
