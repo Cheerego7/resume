@@ -28,37 +28,47 @@ catch( Exception $Exception )
     die( $Exception->getMessage() );
 }
 
-?><!DOCTYPE html>
-<html>
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>我的简历</title>
-    <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
-    <script src="http://lib.sinaapp.com/js/jquery/3.1.0/jquery-3.1.0.min.js"></script>
-    <script src="main.js"></script>
-    
-</head>
-<body>
+?><!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" media="screen" href="app.css" />
+    <title>简历列表</title>
+  </head>
+  <body>
+    <!-- 页面内容区域 -->
     <div class="container">
-    <?php include 'header.php' ?>
-        <h1>我的简历</h1>
+      <?php include 'header.php'; ?>
+      <div class="page-box">      
+      <h1 class="page-title">简历列表</h1>
         <?php if( $resume_list ): ?>
-        <ul class="resume_list">
+        <ul class="list-group list-group-flush">
         <?php foreach( $resume_list as $item ): ?>
-            <li id="rlist-<?=$item['id']?>">
-            <span class="menu_square_large"></span>
+            <li id="rlist-<?=$item['id']?>" class="list-group-item">
                 <a href="resume_detail.php?id=<?=$item['id']?>" class="title middle" target="_blank"><?=$item['title']?></a>
-                <a href="resume_detail.php?id=<?=$item['id']?>" target="_blank"><img src="image/open_in_new.png" alt="查看"></a>
-                <a href="resume_modify.php?id=<?=$item['id']?>"><img src="image/mode_edit.png" alt="编辑"></a>
                 <a href="javascript:confirm_delete('<?=$item['id']?>');void(0);"><img src="image/close.png" alt="删除"></a>
+                <a href="resume_modify.new.php?id=<?=$item['id']?>"><img src="image/mode_edit.png" alt="编辑"></a>
+                <a href="resume_detail.php?id=<?=$item['id']?>" target="_blank"><img src="image/open_in_new.png" alt="查看"></a>
             </li>
         <?php endforeach; ?>
         </ul>
         <?php endif;?>
-        <p><a href="resume_add.php" class="resume_add">
-            <img src="image/add.png" alt="添加简历">添加简历</a></p>
+            <button type="button" class="btn btn-light"><a href="resume_add.php" class="resume-add">
+            <img src="image/add.png" alt="添加简历">添加简历</a></button>
+      </div>
     </div>
-</body>
+    <!-- /页面内容区域 -->
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script src="main.js"></script>
+  </body>
 </html>
