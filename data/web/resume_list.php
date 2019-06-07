@@ -47,19 +47,19 @@ catch( Exception $Exception )
       <div class="page-box">      
       <h1 class="page-title">简历列表</h1>
         <?php if( $resume_list ): ?>
-        <ul class="list-group list-group-flush">
+        <ul class="list-group">
         <?php foreach( $resume_list as $item ): ?>
-            <li id="rlist-<?=$item['id']?>" class="list-group-item">
-                <a href="resume_detail.php?id=<?=$item['id']?>" class="title middle" target="_blank"><?=$item['title']?></a>
+            <li id="rlist-<?=$item['id']?>" class="list-group-item list-group-item-action">
+                <a href="resume_detail.php?id=<?=$item['id']?>" class="btn btn-light" target="_blank"><?=$item['title']?></a>
                 <a href="javascript:confirm_delete('<?=$item['id']?>');void(0);"><img src="image/close.png" alt="删除"></a>
-                <a href="resume_modify.new.php?id=<?=$item['id']?>"><img src="image/mode_edit.png" alt="编辑"></a>
+                <a href="resume_modify.php?id=<?=$item['id']?>"><img src="image/mode_edit.png" alt="编辑"></a>
                 <a href="resume_detail.php?id=<?=$item['id']?>" target="_blank"><img src="image/open_in_new.png" alt="查看"></a>
             </li>
         <?php endforeach; ?>
         </ul>
         <?php endif;?>
-            <button type="button" class="btn btn-light"><a href="resume_add.php" class="resume-add">
-            <img src="image/add.png" alt="添加简历">添加简历</a></button>
+            <p><a href="resume_add.php" class="btn btn-light resume-add">
+            <img src="image/add.png" alt="添加简历">添加简历</a></p>
       </div>
     </div>
     <!-- /页面内容区域 -->

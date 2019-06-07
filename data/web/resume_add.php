@@ -7,7 +7,7 @@ if( intval( $_SESSION['uid'] ) <1 )
     die("请先<a href='user_login.new.php'>登入</a>再添加简历");
 }
 ?><!doctype html>
-<html lang="en">
+<html lang="zh-cn">
   <head>
     <!-- Required meta tags -->
     <meta charset="utf-8">

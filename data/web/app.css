@@ -69,15 +69,28 @@ h1.page-title
     padding: 10px;
 }
 
+.no-padding
+{
+    padding-left:0px;
+    padding-right:0px;
+}
+
+ul > li
+{
+    padding: 5px!important;
+
+}
+
 ul > li img
 {
+    margin-top: 5px;
     float: right;
     margin-left: 10px;
 }
 
 .resume-add
 {
-    text-decoration: none;
+    margin-top: 20px;
 }
 
 a:hover

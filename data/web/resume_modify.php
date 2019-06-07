@@ -30,7 +30,7 @@ catch( Exception $Exception )
     die( $Exception->getMessage() );
 }
 ?><!doctype html>
-<html lang="en">
+<html lang="zh-cn">
   <head>
     <!-- Required meta tags -->
     <meta charset="utf-8">
