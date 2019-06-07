@@ -69,12 +69,6 @@ h1.page-title
     padding: 10px;
 }
 
-.no-padding
-{
-    padding-left:0px;
-    padding-right:0px;
-}
-
 ul > li
 {
     padding: 5px!important;
