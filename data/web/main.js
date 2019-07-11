@@ -1,7 +1,7 @@
-function send_form(form_id)
+function send_form( form_id )
 {
     //alert(form_id);
-    $.post( $("#"+form_id).attr("action"), $("#"+form_id).serialize() , function( data ){
+    $.post( $("#"+form_id).attr("action") , $("#"+form_id).serialize() , function( data ){
         if( $("#"+form_id+"_notice") )
             $("#"+form_id+"_notice").html( data );
     } );
@@ -19,6 +19,7 @@ function confirm_delete( id )
             if( data == 'done' )
             {
                 $("#rlist-"+id).remove();
+                
             }
         } );
     }
